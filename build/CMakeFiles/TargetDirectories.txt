@@ -1,0 +1,3 @@
+/home/xarco/code/cxx/game/build/CMakeFiles/game.dir
+/home/xarco/code/cxx/game/build/CMakeFiles/edit_cache.dir
+/home/xarco/code/cxx/game/build/CMakeFiles/rebuild_cache.dir
