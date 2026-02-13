@@ -1,4 +1,4 @@
-/// @file   main.cxx
+/// @file   game.cxx
 /// @author Gael Zarco
 /// @date   02-10-2026
 /// @brief  Idk what game this is yet.
@@ -26,7 +26,7 @@ public:
 
     /// @brief  State getter
     /// @return Game state
-    State get_state(void) noexcept { return state; }
+    State get_state(void) const noexcept { return state; }
     /// @brief State setter
     void set_state(State s) { state = s; }
 
@@ -51,22 +51,22 @@ int main(void) {
     switch (game.get_state()) {
         case Game::State::Menu:
             std::println("Menu");
+            break;
         case Game::State::Play:
             std::println("Play");
+            break;
         case Game::State::Pause:
             std::println("Pause");
+            break;
         case Game::State::Win:
             std::println("Win");
+            break;
         case Game::State::Fail:
             std::println("Fail");
+            break;
     }
 
     return EXIT_SUCCESS;
 }
 
-// =============================================================================
-// ADT IMPLEMENTATION(S)
-// =============================================================================
-// ...
-
-// EOF main.cxx
+// EOF game.cxx
