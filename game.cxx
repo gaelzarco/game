@@ -14,12 +14,15 @@ class Game {
 public:
     /// @brief Represents game state explicitly
     enum class State {
+        Menu,
+        Play,
+        Pause,
         Win,
         Fail
     };
 
     /// @brief Default parameterized constructor
-    explicit Game(State s = State::Fail) : state(s) {}
+    explicit Game(State s = State::Menu) : state(s) {}
 
     /// @brief  State getter
     /// @return Game state
@@ -43,9 +46,20 @@ private:
 int main(void) {
     Game game{};
 
-    std::println("[LOG] Game state: {}", 
-        game.get_state() == Game::State::Win ? "Win!" : "Fail!"
-    );
+    std::print("[LOG] Game state: ");
+
+    switch (game.get_state()) {
+        case Game::State::Menu:
+            std::println("Menu");
+        case Game::State::Play:
+            std::println("Play");
+        case Game::State::Pause:
+            std::println("Pause");
+        case Game::State::Win:
+            std::println("Win");
+        case Game::State::Fail:
+            std::println("Fail");
+    }
 
     return EXIT_SUCCESS;
 }
